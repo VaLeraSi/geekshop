@@ -134,6 +134,7 @@ def product_quantity_update_save(instance, sender, **kwargs):
         instance.product.quantity -= instance.quantity
     instance.product.save()
 
+
 @receiver(pre_delete, sender=OrderItem)
 @receiver(pre_delete, sender=Basket)
 def product_quantity_update_delete(instance, **kwargs):
@@ -141,7 +142,10 @@ def product_quantity_update_delete(instance, **kwargs):
     instance.product.save()
 
     from mainapp.models import Product
+
+
 from django.http import JsonResponse
+
 
 def get_product_price(request, pk):
     if request.is_ajax():
