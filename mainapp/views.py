@@ -102,7 +102,11 @@ def main(request):
 
 
 def get_hot_product_list():
+ lesson_15
     products = get_products()
+
+    products = Product.objects.filter(is_active=True, category__is_active=True).select_related("category")
+ master
     hot_product = random.sample(list(products), 1)[0]
     hot_list = products.exclude(pk=hot_product.pk)[:3]
     return (hot_product, hot_list)

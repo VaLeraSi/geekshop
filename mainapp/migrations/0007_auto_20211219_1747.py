@@ -6,11 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
+ lesson_15
         ("mainapp", "0006_product_is_active"),
+
+        ('mainapp', '0006_product_is_active'),
+ master
     ]
 
     operations = [
         migrations.AlterField(
+ lesson_15
             model_name="product",
             name="is_active",
             field=models.BooleanField(db_index=True, default=True, verbose_name="продукт активен"),
@@ -19,5 +24,15 @@ class Migration(migrations.Migration):
             model_name="productcategory",
             name="is_active",
             field=models.BooleanField(db_index=True, default=True, verbose_name="категория активна"),
+
+            model_name='product',
+            name='is_active',
+            field=models.BooleanField(db_index=True, default=True, verbose_name='продукт активен'),
+        ),
+        migrations.AlterField(
+            model_name='productcategory',
+            name='is_active',
+            field=models.BooleanField(db_index=True, default=True, verbose_name='категория активна'),
+ master
         ),
     ]

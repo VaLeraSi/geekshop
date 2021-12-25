@@ -14,6 +14,11 @@ from ordersapp.forms import OrderItemForm
 from ordersapp.models import Order, OrderItem
 
 
+ lesson_15
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+ master
 class OrderList(LoginRequiredMixin, ListView):
     model = Order
 

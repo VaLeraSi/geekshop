@@ -57,7 +57,9 @@ def register(request):
 
 from django.contrib.auth.decorators import login_required
 
+lesson_15
 
+master
 @login_required
 @transaction.atomic
 def edit(request):
