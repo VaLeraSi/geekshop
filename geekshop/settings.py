@@ -279,6 +279,23 @@ SOCIAL_AUTH_GITHUB_SECRET = github_auth["client_secret"]
 
 # Django Debug Toolbar --->
 if DEBUG:
+lesson_15
+    INSTALLED_APPS.extend(
+        [
+            "debug_toolbar",
+            "template_profiler_panel",
+            "django_extensions",
+        ]
+    )
+
+
+if DEBUG:
+    MIDDLEWARE.extend(
+        [
+            "debug_toolbar.middleware.DebugToolbarMiddleware",
+        ]
+    )
+
     INSTALLED_APPS.extend([
         "debug_toolbar",
         "template_profiler_panel",
@@ -290,6 +307,7 @@ if DEBUG:
     MIDDLEWARE.extend([
         "debug_toolbar.middleware.DebugToolbarMiddleware",
     ])
+master
 
 # Debgu tool bar settings
 if DEBUG:
@@ -319,3 +337,21 @@ if DEBUG:
         "template_profiler_panel.panels.template.TemplateProfilerPanel",
     ]
 # <--- Django Debug Toolbar
+lesson_15
+
+CACHE_MIDDLEWARE_ALIAS = "default"
+CACHE_MIDDLEWARE_SECONDS = 120
+CACHE_MIDDLEWARE_KEY_PREFIX = "geekbrains"
+
+# Be carefull if you have Windows! Install Memcached before run project!
+#     https://www.ubergizmo.com/how-to/install-memcached-windows/
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.memcached.MemcachedCache",
+        "LOCATION": "127.0.0.1:11211",
+    }
+}
+
+LOW_CACHE = True
+
+master
