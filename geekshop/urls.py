@@ -18,4 +18,11 @@ urlpatterns = [
 
 
 if settings.DEBUG:
+    import debug_toolbar
+
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ lesson_15
+    urlpatterns += [re_path(r"^__debug__/", include(debug_toolbar.urls))]
+
+    urlpatterns += [re_path(r"^__debug__/", include(debug_toolbar.urls))]
+ master
